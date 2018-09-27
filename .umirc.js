@@ -11,7 +11,7 @@ export default {
       //   webpackChunkName:true,
       //   level:2,
       // },
-      title: 'bisai',
+      title: '路印协议-首届交易交易排名赛',
       dll: true,
       pwa: true,
       routes: {
