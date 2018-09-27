@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "eda29f6f625ebae01331",
+    "revision": "2b62a5d5bce4865e51fd",
     "url": "/umi.js"
   },
   {
-    "revision": "eda29f6f625ebae01331",
+    "revision": "2b62a5d5bce4865e51fd",
     "url": "/umi.css"
   },
   {
