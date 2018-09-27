@@ -1,4 +1,4 @@
-import {Pagination,Input} from 'antd';
+import {Pagination,Input,Spin} from 'antd';
 import React from 'react'
 import {getContestRankByOwner, getPagedContestRanks} from '../../common/utils/relay'
 
@@ -8,6 +8,7 @@ export default class RankList extends React.Component {
     super(props, context)
     this.state = {
       items:[], // {Owner, Rank, TradeCount}
+      loading:false,
       pageIndex:1,
       pageSize:20,
       recordCount:0,
@@ -16,10 +17,14 @@ export default class RankList extends React.Component {
   }
 
   getRandDatas(pageIndex) {
+    this.setState({
+        loading:true
+    })
     getPagedContestRanks({round:1, pageIndex, pageSize:this.state.pageSize}).then(res=>{
       if(res.result.data) {
         this.setState({
           items:res.result.data,
+          loading:false,
           recordCount:res.result.total,
           pageCount:Math.ceil(res.result.total / this.state.pageSize)
         })
@@ -196,30 +201,32 @@ export default class RankList extends React.Component {
               </div>
             </div>
             <div className="blk"></div>
-            <table className="table datatable table-striped table-hover text-center text-left-col1 text-left-col2 text-left-col4">
-              <thead>
-              <tr>
-                <th>排名<i className="sorting-asc"></i></th>
-                <th>地址</th>
-                <th>交易笔数<i className="sorting-desc"></i></th>
-                {false && <th>成交规模<i className="sorting"></i></th>}
-              </tr>
-              </thead>
-              <tbody>
-              {this.state.items &&
-                this.state.items.map(item=>{
-                  return (
-                    <tr key={item.Rank}>
-                      <td>{item.Rank}</td>
-                      <td>{item.Owner}</td>
-                      <td>{item.TradeCount}</td>
-                      {false && <td>8,648.0456</td>}
-                    </tr>
-                  )
-                })
-              }
-              </tbody>
-            </table>
+            <Spin spinning={this.state.loading} style={{paddingTop:'50px'}}>
+                <table className="table datatable table-striped table-hover text-center text-left-col1 text-left-col2 text-left-col4">
+                  <thead>
+                  <tr>
+                    <th>排名<i hidden className="sorting-asc"></i></th>
+                    <th>地址</th>
+                    <th>交易笔数<i hidden className="sorting-desc"></i></th>
+                    {false && <th>成交规模<i hidden className="sorting"></i></th>}
+                  </tr>
+                  </thead>
+                  <tbody>
+                  {this.state.items &&
+                    this.state.items.map(item=>{
+                      return (
+                        <tr key={item.Rank}>
+                          <td>{item.Rank}</td>
+                          <td>{item.Owner}</td>
+                          <td>{item.TradeCount}</td>
+                          {false && <td>8,648.0456</td>}
+                        </tr>
+                      )
+                    })
+                  }
+                  </tbody>
+                </table>
+            </Spin>
             {
               !this.state.items || this.state.items.length === 0 &&
               <div style={{textAlign:'center',color:"rgba(0,0,0,0.5)"}}>
