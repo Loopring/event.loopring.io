@@ -192,6 +192,7 @@ export default class RankList extends React.Component {
               </div>
               <div className="" style={{flex:'none',paddingLeft:'15px'}}>
                 <Pagination
+                  current={this.state.pageIndex}
                   pageSize={this.state.pageSize}
                   total={this.state.recordCount}
                   simple={true}
@@ -236,6 +237,7 @@ export default class RankList extends React.Component {
             <div className="blk"></div>
             <div>
               <Pagination
+                current={this.state.pageIndex}
                 pageSize={this.state.pageSize}
                 total={this.state.recordCount}
                 showTotal={(total)=><div className="mr5">共计{total}条记录</div>}
