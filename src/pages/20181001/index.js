@@ -1,3 +1,5 @@
+import Pagination from 'antd/lib/pagination';
+import 'antd/lib/pagination/style'; 
 
 export default function() {
   return (
@@ -124,19 +126,14 @@ export default function() {
                 <h2>交易榜</h2>
             </div>
             <div className="trade-top">
-                <div className="block-bar">
-                    <div className="search">
-                        <input type="" name="" placeholder="地址" /><img src={require('./assets/images/icon-search.svg')} />
+                <div className="d-flex align-items-center">
+                    <div className="search" style={{flex:'1'}}>
+                        <input type="" name="" placeholder="地址" />
+                        <img src={require('./assets/images/icon-search.svg')} />
                     </div>
-                        <div className="pagination-top">
-                            <span>共1520页</span>
-                            <span className="offset-md">
-                                <ul className="pagination">
-                                    <li><a href="# " className="disabled"><img src={require('./assets/images/arrow-left.svg')}/></a></li>
-                                    <li><a href="#"><img src={require('./assets/images/arrow-right.svg')} /></a></li>
-                                </ul>
-                            </span>
-                        </div>
+                    <div className="" style={{flex:'none',paddingLeft:'15px'}}>
+                       <Pagination pageSize={20} total={588} simple={true} hideOnSinglePage={true}/>
+                    </div>
                 </div>
                 <div className="blk"></div>
                 <table className="table datatable table-striped table-hover text-center text-left-col1 text-left-col2 text-left-col4">
@@ -248,25 +245,8 @@ export default function() {
                     </tbody>
                 </table>
                 <div className="blk"></div>
-                <div className="block-bar">
-                    <div className="d-inline-flex align-item-center">
-                        <div>共1520页</div>
-                        <div className="offset-md">
-                        <ul className="pagination">
-                        <li><a href="# " className="disabled"><img src={require('./assets/images/arrow-left.svg')} /></a></li>
-                        <li className="active "><a href="# ">1</a></li>
-                        <li><a href="# ">2</a></li>
-                        <li><a href="# ">3</a></li>
-                        <li><a href="# ">4</a></li>
-                        <li><em></em></li>
-                        <li><a href="# ">65</a></li>
-                        <li><a href="# "><img src={require('./assets/images/arrow-right.svg')} /></a></li>
-                        </ul>
-                        </div>
-                    </div>
-                    <div className="pagination-quick">
-                        <span>跳转到</span><span className="offset-md"><input /></span><span className="offset-md"><button>确定</button></span>
-                    </div>
+                <div>
+                	<Pagination pageSize={20} total={588} showTotal={(total)=><div className="mr5">共计{total}条记录</div>} pageSizeOptions={['10','20','50','100']} showQuickJumper={true} showSizeChanger={true} hideOnSinglePage={true}/>
                 </div>
             </div>
         </div>
