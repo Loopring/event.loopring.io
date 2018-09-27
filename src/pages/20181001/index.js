@@ -12,7 +12,6 @@ export default class RankList extends React.Component {
       pageIndex:1,
       pageSize:20,
       recordCount:0,
-      pageCount:0
     }
   }
 
@@ -26,7 +25,7 @@ export default class RankList extends React.Component {
           items:res.result.data,
           loading:false,
           recordCount:res.result.total,
-          pageCount:Math.ceil(res.result.total / this.state.pageSize)
+          pageIndex
         })
       }
     })
@@ -44,13 +43,11 @@ export default class RankList extends React.Component {
             this.setState({
               items:[res.result],
               recordCount:1,
-              pageCount:1
             })
           } else {
             this.setState({
               items:[],
               recordCount:0,
-              pageCount:0
             })
           }
         })
