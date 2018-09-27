@@ -1,0 +1,56 @@
+/*---------------------
+header
+-----------------------*/
+footer { margin-bottom: 50px; color: rgba(255, 255, 255, .6); font-size: 13px; height: 80px; line-height: 80px; text-align: center; }
+.logo { position: absolute; left: 50%; top: 50px; margin-left: -100px; }
+.logo img { height: 60px; }
+.wrap { position: relative; }
+.top-content { overflow: hidden; }
+.btn { position: absolute; left: 50%; margin-top: -80px; margin-left: -70px; display: block; width: 140px; height: 40px; background-image: linear-gradient(-45deg, #FDFBAB 0%, #FCF987 70%, #FCE440 96%, #FFD028 100%); box-shadow: 0 10px 30px 0 rgba(248, 231, 28, 0.30); border-radius: 40px; line-height: 40px; font-size: 18px; text-align: center; }
+.btn:hover { background-image: linear-gradient(-179deg, #FAD961 0%, #F76B1C 100%); box-shadow: 0 10px 30px 0 rgba(248, 231, 28, 0.30); border-radius: 40px; color: #fff; }
+.banner { margin: 50px -160px 0 }
+.banner img { }
+.section { color: #fff; padding: 30px 0; }
+.section-header { text-align: center; margin: 0 0 50px; }
+.section-header h2 { width: 248px; display: inline-block; padding: 20px 0; background: url(../images/title-bg.png) no-repeat; background-size: 248px 50px; color: #FFEA00; font-size: 24px; text-align: center; }
+.section-header p { padding: 0 30px; }
+.awards-content { display: flex; flex-wrap: wrap; justify-content: center; }
+.awards-content .item { width: 50%; flex-shrink: 0; padding: 10px; text-align: center; }
+.awards-content .item .innner { display: inline-flex; align-items: center; justify-content: center; width: 100%; height: 82px; background-image: linear-gradient(-219deg, #6E32F5 0%, #6E32F5 31%, #45A8ED 76%, #43B1EF 100%); box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.10); border-radius: 51px; }
+.awards-content .item h4 { font-size: 14px; margin-top: 5px; }
+.awards-content .item em { font-style: normal; }
+.trade-top { position: relative; background: #fff; border-radius: 12px; color: #000; padding: 30px 5px; }
+.trade-top:after { display: block; position: absolute; left: 0; bottom: -10px; z-index: -1; width: 100%; height: 40px; background: rgba(255, 255, 255, 0.50); border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; content: "" }
+.block-bar { text-align: center; }
+.search { position: relative; width: 100%; margin-bottom: 20px; }
+.search input { height: 30px; width: 100%; border-radius: 3px; border: 1px solid #EBE9EF; background: #FBFBFB; text-align: center; }
+.search input:focus~img { display: none; }
+.search input~img { position: absolute; left: 50%; margin-left: -35px; top: 6px; z-index: 1; opacity: 0.4; }
+.table tr>td:nth-child(2) { max-width: 120px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.table tbody tr>td:nth-child(1) { color: #1B71FF }
+@media (max-width:768px) { }
+@media (max-width:992px) { }
+@media (max-width:992px) { }
+@media (max-width:1200px) { }
+@media (min-width:576px) { }
+@media (min-width:768px) {
+	.section-header h2 { width: 407px; font-size: 40px; text-align: center; background-size: 407px 81px; }
+}
+@media (min-width:992px) {
+	.section-header { width: 748px; text-align: center; margin: 0 auto 50px; }
+	.awards-content .item { width: 25%; flex-shrink: 0; }
+	.awards-content .item .innner { width: 248px; height: 82px; }
+	.btn { margin-left: -140px; margin-top: -200px; width: 280px; height: 60px; line-height: 60px; }
+	.banner { margin: auto; }
+	.logo { margin-left: -133px; }
+	.logo img { height: 80px; }
+	.section { color: #fff; padding: 60px 0; }
+	.block-bar { display: flex; justify-content: space-between; }
+	.search { margin-bottom: 0; }
+	.pagination-quick { margin-top: 0; }
+	.table th, .table td { padding: 15px 12px; }
+}
+@media (min-width:1200px) {
+	.awards-content { display: flex; flex-wrap: wrap; width: 1078px; margin: auto; }
+	.trade-top { width: 1078px; margin: auto; padding: 50px 75px; }
+}
