@@ -49,6 +49,8 @@ export default class RankList extends React.Component {
             })
           }
         })
+      } else {
+        this.getRandDatas(1)
       }
     }
     return (
