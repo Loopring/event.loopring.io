@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.d739bd06c4e546c3aa691b3e0fc2c881.js"
+  "/precache-manifest.3e5194d860c5e51fef3e0de668994131.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "Loopring"});
