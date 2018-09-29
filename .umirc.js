@@ -12,12 +12,12 @@ export default {
       //   level:2,
       // },
       title: '路印协议-首届交易交易排名赛',
-      dll: true,
-      pwa: true,
+      dll: false,
+      pwa: false,
       routes: {
         exclude: [],
       },
-      hardSource: true,
+      hardSource: false,
     }],
   ],
 }

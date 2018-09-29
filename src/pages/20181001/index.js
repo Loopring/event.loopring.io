@@ -112,7 +112,8 @@ export default class RankList extends React.Component {
               <div className="innner">
                 <div>
                   <em>第41名 至 第50名</em>
-                  <h4>每人奖励 60,000 VITE</h4>
+                  <h4>每人奖励 6,000 VITE</h4>
+                  <div hidden>每人奖励 6,000 VITE</div>
                 </div>
               </div>
             </div>
@@ -120,7 +121,8 @@ export default class RankList extends React.Component {
               <div className="innner">
                 <div>
                   <em>第51名 至 第100名</em>
-                  <h4>每人奖励 40,000 VITE</h4>
+                  <h4>每人奖励 4,000 VITE</h4>
+                  <div hidden>每人奖励 4,000 VITE</div>
                 </div>
               </div>
             </div>
