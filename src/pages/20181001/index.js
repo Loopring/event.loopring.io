@@ -15,11 +15,15 @@ export default class RankList extends React.Component {
     }
   }
 
-  getRandDatas(pageIndex) {
+  getRankDatas(pageIndex) {
+    this.getRankDatasBySize(pageIndex, this.state.pageSize)
+  }
+
+  getRankDatasBySize(pageIndex, pageSize) {
     this.setState({
-        loading:true
+      loading:true
     })
-    getPagedContestRanks({round:1, pageIndex, pageSize:this.state.pageSize}).then(res=>{
+    getPagedContestRanks({round:1, pageIndex, pageSize}).then(res=>{
       if(res.result.data) {
         this.setState({
           items:res.result.data,
@@ -32,7 +36,7 @@ export default class RankList extends React.Component {
   }
 
   componentDidMount() {
-    this.getRandDatas(this.state.pageIndex)
+    this.getRankDatas(this.state.pageIndex)
   }
 
   render() {
@@ -244,7 +248,11 @@ export default class RankList extends React.Component {
                 showQuickJumper={true}
                 showSizeChanger={true}
                 hideOnSinglePage={true}
-                onChange={(page, pageSize) => this.getRandDatas(page)}
+                onChange={(page, pageSize) => this.getRankDatasBySize(page, pageSize)}
+                onShowSizeChange={(current, size) => {
+                  this.setState({pageSize:size})
+                  this.getRankDatasBySize(current, size)
+                }}
               />
             </div>
           </div>
